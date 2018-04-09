@@ -71,3 +71,5 @@ Generating the site from your template is really easy. Just run the "main.py" fi
 
 If all goes well your new site will be located in the "output" directory. 
 
+**Note:** The "output" directory will be created in the same directory as "main.py" if it doesn't already exist. 
+

@@ -10,9 +10,9 @@
 {{FOOTER}}
 ```
 ### What are shortcodes?
-"Short Codes" are custom modular pieces of HTML/JS/CSS that can be inserted into your pages wherever you need them to go. 
+"Short Codes" or "shortcodes" are custom modular pieces of HTML/JS/CSS that can be inserted into your pages wherever you need them to go. 
 
-In the above example, at the very top we see the ```{{HEADER}}``` shortcode. When you run **x2y** and sees the shortcode it will convert it into the the corresponding user defined code which might look something like this:
+In the above example, at the very top we see the ```{{HEADER}}``` shortcode. When you run **x2y** and it sees the shortcode it will convert it into the the corresponding user defined code which might look something like this:
 ```HTML
 <!--HEADER-->
 <!DOCTYPE html>

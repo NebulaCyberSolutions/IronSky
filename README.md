@@ -24,6 +24,8 @@ In the above example, at the very top we see the ```{{HEADER}}``` shortcode. Whe
 The main benefit of using a shortcode system on static sites is that when it comes time to make a change to a major part of your site, for instance the navigation bar, you will not need to manually edit every single page on your site to include the new code (or cross your fingers that your regular expressions will really work this time). 
 
 ### How to make a template:
+The template specifies both the structural layout and content for your site. It will contain all of the HTML files that you need to process and include in your final site. It will also act as a representation of the final directory structure. The files in the "template" directory will contain all of your site content, things like articles, blog posts, the home page ect.
+
 Any files that you place into the "template" directory will automatically become part of your 'site template'. When you run this software it will walk through the "template" directory, replacing shortcodes with their expanded counterparts and sending the new copies to the "output" directory. All internal directory structure (inside of the "template" directory) will be preserved in the "output" directory. 
 
 Anything that you can normally do with front-end web technologies should work here including loading external libraries. For the most part, building the template will be very similar to writing a traditional static website, except now you will have the power of shortcodes at your disposal. If you have ever worked with the shortcode system in WordPress you should feel right at home here. 

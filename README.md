@@ -140,4 +140,5 @@ Determines if the software should ask the user before purging the current output
 
 ### TODO:
 -Add CLI parameter options
+
 -Support Markdown to HTML conversion

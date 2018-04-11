@@ -139,6 +139,8 @@ auto_purge = False
 Determines if the software should ask the user before purging the current output location. By default the software will prompt the user for a  yes/no response before purging. If set to ```True``` this prompt will be skipped. 
 
 ### TODO:
--Add CLI parameter options
+-Add CLI Parameter Options
 
--Support Markdown to HTML conversion
+-Support Markdown to HTML Conversion
+
+-Better Error Handling

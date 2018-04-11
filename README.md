@@ -1,7 +1,7 @@
 # x2y
 ## A highly modular static templating engine.
 #### Focused on generating static sites and documentation with shortcodes.
-#### Requires no external dependencies :) 
+#### Requires no external dependencies & is invisible on the front-end :) 
 ### Example Markup:
 ```HTML
 {{HEADER}}

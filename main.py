@@ -58,6 +58,9 @@ def Build(rootDir,prefabs):
 				print("NOT PARSING: "+fname)
 				shutil.copyfile(dirName+"/"+fname, output_file)
 
-CheckOutput()
-defs = LoadCodes(shortcodes.defs)
-Build(config.template_location,defs)
+def Start():
+	CheckOutput()
+	defs = LoadCodes(shortcodes.defs)
+	Build(config.template_location,defs)
+
+Start()

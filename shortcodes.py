@@ -3,5 +3,7 @@
 defs = {}
 defs.update({"HEADER":"header.html"})
 defs.update({"FOOTER":"footer.html"})
-defs.update({"BOLD-RED":"start-bold-red.html"})
-defs.update({"/BOLD-RED":"end-bold-red.html"})
+defs.update({"TITLE":"title-start.html"})
+defs.update({"/TITLE":"title-end.html"})
+defs.update({"CARD":"card-start.html"})
+defs.update({"/CARD":"card-end.html"})

@@ -4,6 +4,8 @@ import shortcodes
 import shutil
 
 def CheckOutput():
+	if not os.path.isdir(config.output_location):
+		os.mkdir(config.output_location)
 	if os.listdir(config.output_location) != []:
 		if(config.auto_purge == True):
 			purge = "y" 
@@ -23,7 +25,8 @@ def LoadCodes(defs):
 	defs_c = {}
 	for name, location in defs.items():
 		try:
-			html = open(config.short_code_location+"/"+location, 'r').read()
+			html = open(config.shortcode_location+"/"+location, 'r').read()
+			html = html.replace("[[URL]]",config.url+"/")
 			defs_c.update({name:html})
 		except FileNotFoundError:
 			print("LOADING SHORT CODE FAILED!")
@@ -39,17 +42,21 @@ def Build(rootDir,prefabs):
 		print('Found directory: %s' % dirName)
 		for fname in fileList:
 			print('\t%s' % fname)
-			test = open(dirName+"/"+fname, 'r').read()
-			for name, data in prefabs.items():
-				test = test.replace("{{"+name+"}}",data )
 			output_file = config.output_location+"/"+dirName+"/"+fname
 			output_file = output_file.replace(config.template_location,"")#removes the template location from the output path
 			parts = os.path.split(output_file)
 			if not os.path.isdir(parts[0]):#makes sure we have a directory to write to
 				os.mkdir(parts[0])
-			print("Output: "+output_file+"\n\n")
-			file = open(output_file, 'w')
-			file.write(test)
+			print("Output: "+output_file)
+			if(fname.split(".")[1].lower() in config.parse_types):
+				test = open(dirName+"/"+fname, 'r').read()
+				for name, data in prefabs.items():
+					test = test.replace("{{"+name+"}}",data)
+				file = open(output_file, 'w')
+				file.write(test)
+			else:
+				print("NOT PARSING: "+fname)
+				shutil.copyfile(dirName+"/"+fname, output_file)
 
 CheckOutput()
 defs = LoadCodes(shortcodes.defs)

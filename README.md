@@ -125,9 +125,14 @@ template_location = "template"
 auto_purge = False
 ```
 **URL:** Sets the base URL for the site. This is really useful when you need to quickly switch between deploying to a live and static server quickly. 
+
 **PARSE_TYPES:** Determines which file types should be parsed by the application. The default should be enough for most web sites. This functionality is in place to allow for this software to be used in this like text or CSV processing as well as HTML. 
+
 **SHORTCODE_LOCATION:** Sets the directory location for the shortcodes directory. Allows for quick A/B testing of shortcodes. 
+
 **OUTPUT_LOCATION:** Sets the output directory location. Useful for exporting variations of the template. 
+
 **TEMPLATE_LOCATION:** Sets the template directory location. Useful if you have multiple sites sharing the same set of shortcodes. 
+
 **AUTO_PURGE**
 Determines if the software should ask the user before purging the current output location. By default the software will prompt the user for a  yes/no response before purging. If set to ```True``` this prompt will be skipped. 

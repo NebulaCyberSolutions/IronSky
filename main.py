@@ -3,6 +3,33 @@ import config
 import shortcodes
 import shutil
 
+def Parameters():
+	for argument in sys.argv:
+		argument_split = argument.split("=")
+		if argument_split[0] in "--url -u":
+			config.url = argument_split[1]
+			print("URL VALUE: "+config.url)
+			continue
+		if argument_split[0] in "--parse-types -p":
+			config.parse_types = argument_split[1]
+			print("PARSE TYPES VALUE: "+config.parse_types)
+			continue
+		if argument_split[0] in "--shortcodes -s":
+			config.shortcode_location = argument_split[1]
+			print("SHORTCODE LOCATION VALUE: "+config.shortcode_location)
+			continue
+		if argument_split[0] in "--output -o":
+			config.output_location = argument_split[1]
+			print("OUTPUT LOCATION VALUE: "+config.output_location)
+			continue
+		if argument_split[0] in "--template -t":
+			config.template_location = argument_split[1]
+			print("TEMPLATE LOCATION VALUE: "+config.template_location)
+			continue
+		if argument_split[0] in "--auto-purge -a":
+			config.auto_purge = True
+			print("AUTO PURGE VALUE: True")
+
 def CheckOutput():
 	if not os.path.isdir(config.output_location):
 		os.mkdir(config.output_location)
@@ -59,6 +86,7 @@ def Build(rootDir,prefabs):
 				shutil.copyfile(dirName+"/"+fname, output_file)
 
 def Start():
+	Parameters()
 	CheckOutput()
 	defs = LoadCodes(shortcodes.defs)
 	Build(config.template_location,defs)

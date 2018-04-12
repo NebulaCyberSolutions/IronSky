@@ -114,8 +114,10 @@ If all goes well your new site will be located in the "output" directory.
 **Note:** *The "output" directory will be created in the same directory as "main.py" if it doesn't already exist.*
 **Note:** *By default, this software will only parse html files. That is files ending in ".htm" or ".html" (Case insensitive). You can change which file types will be parsed by editing the ```parse_types``` variable in "config.py". This was done to prevent the software from attempting to parse things such as images and audio.* 
 
-### Configuration:
-All configuration happens in the "config.py" file. Soon I will add support for command line arguments.
+### Configuration & CLI Arguments:
+
+Options can either be changed in the "config.py" file or provided on launch with the CLI parameters.
+
 At the time of writing, the "config.py" file looks like this:
 ```python
 url = "https://example.com" #no trailing slash
@@ -125,15 +127,33 @@ output_location = "output"
 template_location = "template"
 auto_purge = False
 ```
-**URL:** Sets the base URL for the site. This is really useful when you need to quickly switch between deploying to a live and static server quickly. 
+**URL:** Sets the base URL for the site. This is really useful when you need to quickly switch between deploying to a live and static server quickly. This URL should **NEVER** have a trailing slash.
 
-**PARSE_TYPES:** Determines which file types should be parsed by the application. The default should be enough for most web sites. This functionality is in place to allow for this software to be used in this like text or CSV processing as well as HTML. 
+CLI Argument:
+```--url=<URL>``` or ```-u=<URL>```
+
+**PARSE_TYPES:** Determines which file types should be parsed by the application. The default should be enough for most web sites. This functionality is in place to allow for this software to be used in this like text or CSV processing as well as HTML. File types should be provided in CSV format.
+
+CLI Argument:
+```--parse=<CSV>``` or ```-p=<CSV>```
 
 **SHORTCODE_LOCATION:** Sets the directory location for the shortcodes directory. Allows for quick A/B testing of shortcodes. 
 
-**OUTPUT_LOCATION:** Sets the output directory location. Useful for exporting variations of the template. 
+CLI Argument:
+```--shortcodes=<Directory>``` or ```-s=<Directory>```
+
+**OUTPUT_LOCATION:** Sets the output directory location. Useful for exporting variations of the template.
+
+CLI Argument:
+```--output=<Directory>``` or ```-o=<Directory>``` 
 
 **TEMPLATE_LOCATION:** Sets the template directory location. Useful if you have multiple sites sharing the same set of shortcodes. 
 
+CLI Argument:
+```--template=<Directory>``` or ```-t=<Directory>```
+
 **AUTO_PURGE**
 Determines if the software should ask the user before purging the current output location. By default the software will prompt the user for a  yes/no response before purging. If set to ```True``` this prompt will be skipped. 
+
+CLI Argument:
+```--auto-purge``` or ```-a```

@@ -10,7 +10,7 @@ def Parameters():
 			config.url = argument_split[1]
 			print("URL VALUE: "+config.url)
 			continue
-		if argument_split[0] in "--parse-types -p":
+		if argument_split[0] in "--parse -p":
 			config.parse_types = argument_split[1]
 			print("PARSE TYPES VALUE: "+config.parse_types)
 			continue

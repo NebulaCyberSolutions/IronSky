@@ -77,6 +77,9 @@ def Build(rootDir,prefabs):
 			print("Output: "+output_file)
 			if(fname.split(".")[1].lower() in config.parse_types):
 				test = open(dirName+"/"+fname, 'r').read()
+				#meta-shortcodes
+				test = test.replace("[[URL]]",config.url+"/")
+				#end meta-shortcodes
 				for name, data in prefabs.items():
 					test = test.replace("{{"+name+"}}",data)
 				file = open(output_file, 'w')

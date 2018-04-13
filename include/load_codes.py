@@ -5,7 +5,7 @@ def LoadCodes(defs):
 	defs_c = {}
 	for name, location in defs.items():
 		try:
-			html = open("user/"+config.shortcode_location+"/"+location, 'r').read()
+			html = open(config.shortcode_location+"/"+location, 'r').read()
 			html = MetaShortCodes(html)
 			defs_c.update({name:html})
 		except FileNotFoundError:

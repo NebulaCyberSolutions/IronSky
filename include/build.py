@@ -4,7 +4,6 @@ import include.strings as strings
 import user.config.config as config
 from include.meta_shortcodes import *
 def Build(rootDir,prefabs):
-	rootDir = "user/"+rootDir
 	print(strings.build["look"]+rootDir)
 	for dirName, subdirList, fileList in os.walk(rootDir):
 		print(strings.build["found"]+'%s' % dirName)

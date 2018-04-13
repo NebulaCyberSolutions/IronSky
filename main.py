@@ -9,4 +9,5 @@ def Start():
 	CheckOutput()
 	defs = LoadCodes(shortcodes.defs)
 	Build(config.template_location,defs)
+
 Start()

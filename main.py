@@ -1,4 +1,4 @@
-import config.shortcodes as shortcodes
+import user.config.shortcodes as shortcodes
 from include.parameters import *
 from include.checkout import *
 from include.load_codes import *

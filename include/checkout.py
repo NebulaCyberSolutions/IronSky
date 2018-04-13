@@ -1,6 +1,6 @@
 import os
 import shutil
-import config.config as config
+import user.config.config as config
 import include.strings as strings
 def CheckOutput():
 	if not os.path.isdir(config.output_location):

@@ -1,11 +1,11 @@
 import include.strings as strings
-import config.config as config
+import user.config.config as config
 from include.meta_shortcodes import *
 def LoadCodes(defs):
 	defs_c = {}
 	for name, location in defs.items():
 		try:
-			html = open(config.shortcode_location+"/"+location, 'r').read()
+			html = open("user/"+config.shortcode_location+"/"+location, 'r').read()
 			html = MetaShortCodes(html)
 			defs_c.update({name:html})
 		except FileNotFoundError:

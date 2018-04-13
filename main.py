@@ -47,7 +47,7 @@ def CheckOutput():
 					shutil.rmtree(os.path.join(dirName, d))
 		else:
 			print("OVERWRITING INSTEAD.")
-def MetaShorcodes(data):
+def MetaShortCodes(data):
 	data = data.replace("[[URL]]",config.url+"/")
 	return data
 
@@ -56,7 +56,7 @@ def LoadCodes(defs):
 	for name, location in defs.items():
 		try:
 			html = open(config.shortcode_location+"/"+location, 'r').read()
-			html = MetaShorcodes(html)
+			html = MetaShortCodes(html)
 			defs_c.update({name:html})
 		except FileNotFoundError:
 			print("LOADING SHORT CODE FAILED!")
@@ -81,7 +81,7 @@ def Build(rootDir,prefabs):
 			if(fname.split(".")[1].lower() in config.parse_types):
 				test = open(dirName+"/"+fname, 'r').read()
 				#meta-shortcodes
-				test = MetaShorcodes(test)
+				test = MetaShortCodes(test)
 				#end meta-shortcodes
 				for name, data in prefabs.items():
 					test = test.replace("{{"+name+"}}",data)

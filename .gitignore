@@ -1,2 +1,4 @@
 output/ 
 __pycache__/
+include/__pycache__/
+config/__pycache__/

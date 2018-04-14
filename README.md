@@ -50,22 +50,22 @@ In the above example, at the very top we see the ```{{HEADER}}``` shortcode. Whe
 The main benefit of using a shortcode system on static sites is that when it comes time to make a change to a major part of your site, for instance the navigation bar, you will not need to manually edit every single page on your site to include the new code (or cross your fingers that your regular expressions will really work this time). 
 
 ### How to make a template:
-The template specifies both the structural layout and content for your site. It will contain all of the HTML files that you need to process and include in your final site. It will also act as a representation of the final directory structure. The files in the "template" directory will contain all of your site content, things like articles, blog posts, the home page ect.
+The template specifies both the structural layout and content for your site. It will contain all of the HTML files that you need to process and include in your final site. It will also act as a representation of the final directory structure. The files in the "user/template" directory will contain all of your site content, things like articles, blog posts, the home page ect.
 
-Any files that you place into the "template" directory will automatically become part of your 'site template'. When you run this software it will walk through the "template" directory, replacing shortcodes with their expanded counterparts and sending the new copies to the "output" directory. All internal directory structure (inside of the "template" directory) will be preserved in the "output" directory. 
+Any files that you place into the "user/template" directory will automatically become part of your 'site template'. When you run this software it will walk through the "user/template" directory, replacing shortcodes with their expanded counterparts and sending the new copies to the "user/output" directory. All internal directory structure (inside of the "user/template" directory) will be preserved in the "user/output" directory. 
 
-**Note:** *By default, the software will only parse HTML files. Any other types of files that you include in your template directory such as images, CSS ect. will not be parsed, it will simply be copied over to the "output" directory. There is really no reason that you need to include any other file types in your "template" directory, and it will slightly slow down the software, but some users might find this much simpler and easier than manually merging the exported template with the rest of their site files.* 
+**Note:** *By default, the software will only parse HTML files. Any other types of files that you include in your template directory such as images, CSS ect. will not be parsed, it will simply be copied over to the "user/output" directory. There is really no reason that you need to include any other file types in your "user/template" directory, and it will slightly slow down the software, but some users might find this much simpler and easier than manually merging the exported template with the rest of their site files.* 
 
 Anything that you can normally do with front-end web technologies should work here including loading external libraries. For the most part, building the template will be very similar to writing a traditional static website, except now you will have the power of shortcodes at your disposal. If you have ever worked with the shortcode system in WordPress you should feel right at home here. 
 
-The existing "template" directory contains some very basic examples of how you might structure your own template directory.  
+The existing "user/template" directory contains some very basic examples of how you might structure your own template directory.  
 
 ### How to create a new shortcode:
 Creating and adding new shortcodes is a fairly straight forward process. 
 
-First create a new HTML file in the "shortcodes" directory. 
+First create a new HTML file in the "user/shortcodes" directory. 
 
-**Note:** *This is not the "shortcodes.py" file, but we will need to edit that as well momentarily. The name of this new file doesn't matter but you will need to remember it in just a moment when we add it to the "shortcodes.py" file.* 
+**Note:** *This is not the "user/config/shortcodes.py" file, but we will need to edit that as well momentarily. The name of this new file doesn't matter but you will need to remember it in just a moment when we add it to the "user/config/shortcodes.py" file.* 
 
 In this newly created file, you can add whatever HTML/JS/CSS that you might need. 
 
@@ -80,7 +80,7 @@ http://example.com/path/to/some/file.html --OK!
 /path/to/some/file.html --PROBABLY NOT OK!
 ```
 
-**TIP**: *You can set a custom root URL in "config.py". This will allow you to use the special syntax ```[[URL]]``` in your shortcodes like this:*
+**TIP**: *You can set a custom root URL in "user/config/config.py". This will allow you to use the special syntax ```[[URL]]``` in your shortcodes like this:*
 ```html
 <div class="navigation">
 		<a href="[[URL]]index.html">Home</a>
@@ -92,7 +92,7 @@ or:
 <link rel="stylesheet" href="[[URL]]styles.css">
 ```
 
-Once you have created the shortcode file and saved it as something like ```NewShortCodeName.html``` inside of the "shortcodes" directory, you need to make sure the software knows what it is by adding it to "shortcodes.py". This  file contains a dictionary of every shortcode's name and its relative location inside of the "shortcodes" directory. 
+Once you have created the shortcode file and saved it as something like ```NewShortCodeName.html``` inside of the "user/shortcodes" directory, you need to make sure the software knows what it is by adding it to "user/config/shortcodes.py". This  file contains a dictionary of every shortcode's name and its relative location inside of the "shortcodes" directory. 
 
 You can add your new shortcode anywhere after the line containing:
 
@@ -109,14 +109,14 @@ Generating the site from your template is really easy. Just run the "main.py" fi
 
 ```python3 main.py```
 
-If all goes well your new site will be located in the "output" directory. 
+If all goes well your new site will be located in the "user/output" directory. 
 
-**Note:** *The "output" directory will be created in the same directory as "main.py" if it doesn't already exist.*
-**Note:** *By default, this software will only parse html files. That is files ending in ".htm" or ".html" (Case insensitive). You can change which file types will be parsed by editing the ```parse_types``` variable in "config.py". This was done to prevent the software from attempting to parse things such as images and audio.* 
+**Note:** *The "user/output" directory will be created if it doesn't already exist.*
+**Note:** *By default, this software will only parse html files. That is files ending in ".htm" or ".html" (Case insensitive). You can change which file types will be parsed by editing the ```parse_types``` variable in "user/config/config.py". This was done to prevent the software from attempting to parse things such as images and audio.* 
 
 ### Configuration & CLI Arguments:
 
-Options can either be changed in the "config.py" file or provided on launch with the CLI parameters.
+Options can either be changed in the "user/config/config.py" file or provided on launch with the CLI parameters.
 
 At the time of writing, the "config.py" file looks like this:
 ```python

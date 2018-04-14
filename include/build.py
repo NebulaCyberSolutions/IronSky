@@ -1,9 +1,9 @@
 import os
 import shutil
 import include.strings as strings
-import user.config.config as config
 from include.meta_shortcodes import *
-def Build(rootDir,prefabs):
+def Build(shortcodes, config):
+	rootDir = config.template_location;
 	print(strings.build["look"]+rootDir)
 	for dirName, subdirList, fileList in os.walk(rootDir):
 		print(strings.build["found"]+'%s' % dirName)
@@ -18,9 +18,9 @@ def Build(rootDir,prefabs):
 			if(fname.split(".")[1].lower() in config.parse_types):
 				template_file = open(dirName+"/"+fname, 'r').read()
 				#meta-shortcodes
-				template_file = MetaShortCodes(template_file)
+				template_file = MetaShortCodes(template_file,config)
 				#end meta-shortcodes
-				for name, data in prefabs.items():
+				for name, data in shortcodes.items():
 					template_file = template_file.replace("{{"+name+"}}",data)
 				file = open(output_file, 'w')
 				file.write(template_file)

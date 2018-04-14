@@ -1,4 +1,3 @@
-import user.config.config as config
-def MetaShortCodes(data):
+def MetaShortCodes(data,config):
 	data = data.replace("[[URL]]",config.url+"/")
 	return data

@@ -1,5 +1,6 @@
 import sys
-def Parameters():
+import include.strings as strings
+def Parameters(config):
 	for argument in sys.argv:
 		argument_split = argument.split("=")
 		if argument_split[0] in "--url -u":
@@ -25,3 +26,4 @@ def Parameters():
 		if argument_split[0] in "--auto-purge -a":
 			config.auto_purge = True
 			print(strings.arg_read["purge"])
+	return config

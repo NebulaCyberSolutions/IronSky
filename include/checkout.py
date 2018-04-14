@@ -1,8 +1,7 @@
 import os
 import shutil
-import user.config.config as config
 import include.strings as strings
-def CheckOutput():
+def CheckOutput(config):
 	if not os.path.isdir(config.output_location):
 		os.mkdir(config.output_location)
 	if os.listdir(config.output_location) != []:

@@ -1,5 +1,5 @@
 # x2y
-## A highly modular static templating engine.
+## Modular, Minimal Shortcode Templating Engine for Static Sites & Documents.
 #### Focused on generating static sites and documentation with shortcodes.
 #### Requires no external dependencies & is invisible on the front-end :) 
 ### Example Markup:

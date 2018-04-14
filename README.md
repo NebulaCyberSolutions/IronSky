@@ -1,6 +1,5 @@
 # x2y
 ## Modular, Minimal Shortcode Templating Engine for Static Sites & Documents.
-#### Focused on generating static sites and documentation with shortcodes.
 #### Requires no external dependencies & is invisible on the front-end :) 
 ### Example Markup:
 ```HTML

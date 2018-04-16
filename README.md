@@ -1,4 +1,3 @@
-Accessories:
 # IronSky
 ## Modular, Minimal Shortcode Templating Engine for Static Sites & Documents.
 #### Requires no external dependencies & is invisible on the front-end :) 

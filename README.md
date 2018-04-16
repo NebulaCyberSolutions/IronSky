@@ -1,4 +1,5 @@
-# x2y
+Accessories:
+# IronSky
 ## Modular, Minimal Shortcode Templating Engine for Static Sites & Documents.
 #### Requires no external dependencies & is invisible on the front-end :) 
 ### Example Markup:
@@ -6,7 +7,7 @@
 {{HEADER}}
 {{CARD}}
 {{TITLE}}WELCOME{{/TITLE}}
-This is demo content for x2y! Just some regular HTML here!</br>
+This is demo content for IronSky! Just some regular HTML here!</br>
 <img src="img/bot.png">
 {{/CARD}}
 {{FOOTER}}
@@ -17,7 +18,7 @@ This is demo content for x2y! Just some regular HTML here!</br>
 <!DOCTYPE html>
 <html>
 <body>
-	<h1>x2y</h2>
+	<h1>IronSky</h2>
 	<div class="navigation">
 		<a href="https://example.com/index.html">Home</a>
 		<a href="https://example.com/projects/test.html">Test</a>
@@ -25,11 +26,11 @@ This is demo content for x2y! Just some regular HTML here!</br>
 	
 <div class="card">
 <h2 class="title">WELCOME</h2>
-This is demo content for x2y! Just some regular HTML here!</br>
+This is demo content for IronSky! Just some regular HTML here!</br>
 <img src="img/bot.png">
 </div>
 <!--FOOTER-->
-<div class="footer"><a href="https://github.com/matdombrock/x2y">Checkout x2y on Github!</a></div>
+<div class="footer"><a href="https://github.com/matdombrock/IronSky">Checkout IronSky on Github!</a></div>
 </body>
 <link rel="stylesheet" href="https://example.com/styles.css">
 </html>
@@ -37,7 +38,7 @@ This is demo content for x2y! Just some regular HTML here!</br>
 ### What are shortcodes?
 "Short Codes" or "shortcodes" are custom modular pieces of HTML/JS/CSS that can be inserted into your pages wherever you need them to go. 
 
-In the above example, at the very top we see the ```{{HEADER}}``` shortcode. When you run **x2y** and it sees the shortcode it will convert it into the the corresponding user defined code which might look something like this:
+In the above example, at the very top we see the ```{{HEADER}}``` shortcode. When you run **IronSky** and it sees the shortcode it will convert it into the the corresponding user defined code which might look something like this:
 ```HTML
 <!--HEADER-->
 <!DOCTYPE html>

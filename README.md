@@ -1,6 +1,7 @@
 # IronSky
 ## Modular, Minimal Shortcode Templating Engine for Static Sites & Documents.
 #### Requires no external dependencies & is invisible on the front-end :) 
+![logo](https://i.imgur.com/L8V8QRZ.png)
 ### Example Markup:
 ```HTML
 {{HEADER}}

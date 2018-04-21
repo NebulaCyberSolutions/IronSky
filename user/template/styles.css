@@ -14,3 +14,8 @@ a, a:visited{
 	margin:0 auto;
 	padding:1em;
 }
+.meta-test{
+	background:url("[[URL]]img/bot.png");
+	min-height:250px;
+	min-width:250px;
+}

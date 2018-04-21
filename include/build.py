@@ -2,7 +2,7 @@ import os
 import shutil
 import include.strings as strings
 from include.meta_shortcodes import *
-def Build(shortcodes, config):
+def Build(shortcodes, config, meta):
 	rootDir = config.template_location;
 	print(strings.build["look"]+rootDir)
 	for dirName, subdirList, fileList in os.walk(rootDir):
@@ -18,7 +18,7 @@ def Build(shortcodes, config):
 			if(fname.split(".")[1].lower() in config.parse_types):
 				template_file = open(dirName+"/"+fname, 'r').read()
 				#meta-shortcodes
-				template_file = MetaShortCodes(template_file,config)
+				template_file = MetaShortCodes(template_file,config,meta)
 				#end meta-shortcodes
 				for name, data in shortcodes.items():
 					template_file = template_file.replace("{{"+name+"}}",data)

@@ -1,5 +1,6 @@
 import os
 import shutil
+import pathlib
 import include.strings as strings
 from include.meta_shortcodes import *
 def Build(shortcodes, config, meta):
@@ -13,7 +14,7 @@ def Build(shortcodes, config, meta):
 			output_file = output_file.replace(config.template_location,"")#removes the template location from the output path
 			path_parts = os.path.split(output_file)
 			if not os.path.isdir(path_parts[0]):#makes sure we have a directory to write to
-				os.mkdir(path_parts[0])
+				pathlib.Path(path_parts[0]).mkdir(parents=True, exist_ok=True)
 			print(strings.build["output"]+output_file)
 			if(fname.split(".")[1].lower() in config.parse_types):
 				template_file = open(dirName+"/"+fname, 'r').read()
